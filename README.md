@@ -28,4 +28,31 @@ This project demonstrates:
 7.) REST API (FastAPI)
 8.) Ready for React UI integration
 
+## Architecture Diagram (text / mermaid)
+High-Level Architecture :
+    PICTURE
 
+## API Endpoints
+
+POST /analyze
+Analyzes a financial document or URL.
+
+Request:
+{
+  "type": "pdf/url/text",
+  "input": "http://newslink.com/article123",
+  "query": "summarize risks and metrics"
+}
+
+Response:
+{
+  "summary": "...",
+  "sentiment": "neutral",
+  "risk_factors": [...],
+  "opportunities": [...],
+  "key_metrics": {
+    "revenue": "...",
+    "profit": "...",
+    "guidance": "..."
+  }
+}

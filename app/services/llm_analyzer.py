@@ -3,7 +3,7 @@ import json
 from typing import List
 import openai
 from dotenv import load_dotenv
-from app.models.schemas import AnalyzeResponse, KeyMetrics
+from app.models.schema import AnalyzeResponse, KeyMetrics
 
 load_dotenv()
 

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.models.schemas import AnalyzeRequest, AnalyzeResponse, HealthResponse
+from app.models.schema import AnalyzeRequest, AnalyzeResponse, HealthResponse
 from app.services.rag import RAGPipeline
 
 router = APIRouter()

@@ -4,7 +4,7 @@ from app.services.extractor import TextExtractor
 from app.services.embedder import Embedder
 from app.services.vector_store import VectorStore
 from app.services.llm_analyzer import LLMAnalyzer
-from app.models.schemas import AnalyzeRequest, AnalyzeResponse
+from app.models.schema import AnalyzeRequest, AnalyzeResponse
 
 class RAGPipeline:
     """End-to-end RAG pipeline for financial document analysis"""

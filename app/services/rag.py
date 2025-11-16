@@ -35,7 +35,7 @@ class RAGPipeline:
         """
         
         # Step 1: Extract text
-        print(f"📄 Extracting text from {request.type}...")
+        print(f" Extracting text from {request.type}...")
         raw_text = self.extractor.extract(request.type, request.input)
         clean_text = self.extractor.clean_text(raw_text)
         
@@ -43,7 +43,7 @@ class RAGPipeline:
             raise ValueError("Extracted text is too short or empty")
         
         # Step 2: Chunk text
-        print(f"✂️  Chunking text (size={self.chunk_size}, overlap={self.chunk_overlap})...")
+        print(f"  Chunking text (size={self.chunk_size}, overlap={self.chunk_overlap})...")
         chunks = self.embedder.chunk_text(
             clean_text,
             chunk_size=self.chunk_size,
@@ -52,18 +52,18 @@ class RAGPipeline:
         print(f"   Created {len(chunks)} chunks")
         
         # Step 3: Generate embeddings
-        print(f"🧮 Generating embeddings...")
+        print(f" Generating embeddings...")
         embeddings = self.embedder.embed_batch(chunks)
         
         # Step 4: Store in vector DB
-        print(f"💾 Storing vectors in FAISS...")
+        print(f" Storing vectors in FAISS...")
         # Clear previous session data (for fresh analysis each time)
         # You can comment this out to keep accumulating documents
         self.vector_store.clear()
         self.vector_store.add_vectors(embeddings, chunks)
         
         # Step 5: Retrieve relevant chunks
-        print(f"🔍 Retrieving top {self.top_k} relevant chunks...")
+        print(f" Retrieving top {self.top_k} relevant chunks...")
         query_embedding = self.embedder.embed_text(request.query)
         results = self.vector_store.search(query_embedding, top_k=self.top_k)
         
@@ -74,10 +74,10 @@ class RAGPipeline:
             raise ValueError("No relevant context found")
         
         # Step 6: LLM Analysis
-        print(f"🤖 Analyzing with LLM...")
+        print(f" Analyzing with LLM...")
         response = self.analyzer.analyze(context_chunks, request.query)
         
-        print(f"✅ Analysis complete!")
+        print(f" Analysis complete!")
         return response
     
     def get_stats(self) -> dict:

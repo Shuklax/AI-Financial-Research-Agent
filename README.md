@@ -1,10 +1,10 @@
-# AI-Financial-Research-Agent
+# FinOps AI
 
 ChatGPT for Finance, but with real documents + structured insights.
 
 ## Overview
 
-AI Financial Research Agent is an end-to-end system that analyzes financial reports, earnings PDFs, and news articles, and produces structured insights using a Retrieval-Augmented Generation (RAG) pipeline.
+FinOps AI is an end-to-end system that analyzes financial reports, earnings PDFs, and news articles, and produces structured insights using a Retrieval-Augmented Generation (RAG) pipeline.
 
 It extracts text → embeds it → stores vectors in FAISS → retrieves relevant chunks → feeds them into an LLM → outputs risk summaries, sentiment, key metrics, and actionable insights.
 

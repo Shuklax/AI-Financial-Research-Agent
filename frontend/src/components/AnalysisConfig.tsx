@@ -77,7 +77,7 @@ const AnalysisConfig = () => {
       </div>
 
       <div className="flex flex-row-reverse mt-6 mr-4">
-        <button className="bg-black text-white rounded-xl font-semibold py-2 px-4 w-3/7">
+        <button className="bg-black text-white rounded-xl font-semibold py-2 px-4 w-3/7 hover:bg-slate-800">
           <Activity className="inline mr-2" size={18} />
           Generate Analysis
         </button>

@@ -8,7 +8,7 @@ FinOps AI is an end-to-end system that analyzes financial reports, earnings PDFs
 
 It extracts text → embeds it → stores vectors in FAISS → retrieves relevant chunks → feeds them into an LLM → outputs risk summaries, sentiment, key metrics, and actionable insights.
 
-<img width="1918" height="871" alt="image" src="https://github.com/user-attachments/assets/ab784778-6bd0-422d-a544-154676d380fb" />
+<img width="1916" height="873" alt="image" src="https://github.com/user-attachments/assets/0e936a9e-c4b1-4450-86e7-d027298a1623" />
 
 
 This project demonstrates:

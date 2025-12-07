@@ -53,12 +53,8 @@ You will receive:
 
 You MUST respond with a **valid JSON object** that strictly follows this structure:
 {
-  "summary": [
-    "bullet point 1",
-    "bullet point 2",
-    "bullet point 3"
-  ],
-  "sentiment": "positive/negative/neutral/mixed",
+  "summary": "Brief executive summary (2-3 sentences)",
+  "sentiment": "Positive/Negative/Neutral/Mixed",
   "risk_factors": ["risk 1", "risk 2", ...],
   "opportunities": ["opportunity 1", "opportunity 2", ...],
   "key_metrics": {
@@ -178,8 +174,8 @@ Return ONLY the JSON object that follows the specified schema."""
                 citations_value = len(context_chunks)
 
             return AnalyzeResponse(
-                summary=summary_list,
-                sentiment=result_json.get("sentiment", "neutral"),
+                summary=result_json.get("summary", "Analysis completed"),
+                sentiment=result_json.get("sentiment", "Neutral"),
                 risk_factors=result_json.get("risk_factors", []),
                 opportunities=result_json.get("opportunities", []),
                 key_metrics=KeyMetrics(**result_json.get("key_metrics", {})),
@@ -191,8 +187,8 @@ Return ONLY the JSON object that follows the specified schema."""
         except json.JSONDecodeError:
             # Fallback response if JSON parsing fails
             return AnalyzeResponse(
-                summary=["Analysis completed but structured output failed"],
-                sentiment="neutral",
+                summary="Analysis completed but structured output failed",
+                sentiment="Neutral",
                 risk_factors=["Unable to extract structured insights"],
                 opportunities=[],
                 key_metrics=KeyMetrics(),

@@ -87,17 +87,8 @@ class KeyMetrics(BaseModel):
 
 
 class AnalyzeResponse(BaseModel):
-    """
-    Structured LLM response returned by /analyze.
-
-    - `summary` is now pointwise (bullet-style) summary items.
-    """
-
-    summary: List[str] = Field(
-        ...,
-        description="Pointwise executive summary (list of bullet points)",
-    )
-    sentiment: Literal["positive", "negative", "neutral", "mixed"] = Field(
+    summary: str = Field(..., description="Executive summary")
+    sentiment: Literal["Positive", "Negative", "Neutral", "Mixed"] = Field(
         ..., description="Overall sentiment"
     )
     risk_factors: List[str] = Field(
